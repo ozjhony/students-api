@@ -1,0 +1,20 @@
+{
+  "name": "api-rest",
+  "version": "1.0.0",
+  "description": "academic rest api",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "academic",
+    "rest-api"
+  ],
+  "author": "Jhony Perez",
+  "license": "ISC",
+  "dependencies": {
+    "config": "^3.3.3",
+    "mongoose": "^5.11.15",
+    "mongoose-unique-validator": "^2.0.3"
+  }
+}

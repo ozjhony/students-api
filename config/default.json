@@ -1,0 +1,13 @@
+{
+
+  "db-connections":{
+      "mongodb":{
+          "host":"cluster0.b9mfd.mongodb.net",
+          "user":"api_rest",
+          "password":"opAnCKXVczMovCMc",
+          "dbname":"apiDB"
+      }
+  }
+
+
+}
