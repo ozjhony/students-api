@@ -61,6 +61,7 @@ exports.updateTeacher = (req, res, next) => {
         office: req.body.office,
         department: req.body.department
     };
+    console.log("no funciona " + req.body.document)
     teacherDto.update({ _id: req.body.id }, teacher, (err, data) => {
         if (err) {
             return res.status(400).json(
@@ -69,10 +70,10 @@ exports.updateTeacher = (req, res, next) => {
                 }
             );
         }
-        console.log("Fuera: " + req.body.olddocument);
-        if (req.body.olddocument != undefined) {
+        console.log("Fuera: " + req.body.name);
+        if (req.body.document != undefined) {
             let r = config.get("roles").teacher;
-            console.log("Old Document: " + req.body.olddocument)
+            console.log("Old Document: " + req.body.document)
             let user = {
                 name: teacher.name,
                 lastname: teacher.lastname,
@@ -80,7 +81,7 @@ exports.updateTeacher = (req, res, next) => {
                 password: helper.EncryptPassword(req.body.password),
                 role: r
             };
-            userDto.update({ username: req.body.olddocument }, user, (err, u) => {
+            userDto.update({ username: req.body.document }, user, (err, u) => {
                 if (err) {
                     return res.status(400).json(
                         {
@@ -143,7 +144,7 @@ exports.getByDocument = (req, res, next) => {
     });
 };
 
-exports.deleteTeacher = () => {
+exports.deleteTeacher = (req, res, next) => {
     teacherDto.delete({ _id: req.body.id }, (err, data) => {
         if (err) {
             return res.status(400).json(

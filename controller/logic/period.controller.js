@@ -66,7 +66,7 @@ exports.getAll = (req, res, next) => {
     });
 };
 
-exports.deletePeriod = () => {
+exports.deletePeriod = (req, res, next) => {
     periodDto.delete({ _id: req.body.id }, (err, data) => {
         if (err) {
             return res.status(400).json(

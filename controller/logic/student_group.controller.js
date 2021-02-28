@@ -80,7 +80,7 @@ exports.getByCode = (req, res, next) => {
     });
 };
 
-exports.deleteStGr = () => {
+exports.deleteStGr = (req, res, next) => {
     studentGrDto.delete({ _id: req.body.student_id }, (err, data) => {
         if (err) {
             return res.status(400).json(

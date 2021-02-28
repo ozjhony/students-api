@@ -80,7 +80,7 @@ exports.getByCode = (req, res, next) => {
     });
 };
 
-exports.deleteCourse = () => {
+exports.deleteCourse = (req, res, next) => {
     courseDto.delete({ _id: req.body.id }, (err, data) => {
         if (err) {
             return res.status(400).json(

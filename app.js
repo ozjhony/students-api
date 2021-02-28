@@ -47,6 +47,12 @@ periodRoutes(app);
 const courseRoutes = require("./routes/course.routes");
 courseRoutes(app);
 
+const student_groupRoutes=require("./routes/student_group.routes");
+student_groupRoutes(app);
+
+const groupRoutes=require("./routes/group.routes");
+groupRoutes(app);
+
 //faculty Routes loading
 //const facultyRoutes = require("./routes/faculty.routes");
 //facultyRoutes(app);

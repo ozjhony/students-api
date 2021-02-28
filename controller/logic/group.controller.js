@@ -84,7 +84,7 @@ exports.getByCode = (req, res, next) => {
     });
 };
 
-exports.deleteGroup = () => {
+exports.deleteGroup = (req, res, next) => {
     groupDto.delete({ _id: req.body.number }, (err, data) => {
         if (err) {
             return res.status(400).json(
